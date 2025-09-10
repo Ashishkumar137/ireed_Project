@@ -23,8 +23,8 @@ const scrollableImage = [
 const Page = () => {
   return (
     <>
-      <div className="bg-white text-black width-full h-full">
-        <header className="flex flex-col md:flex-row justify-center items-center px-4 py-2 gap-5">
+      <div className="bg-white text-black w-full h-full">
+        <header className="flex flex-col md:flex-row justify-center items-center py-2 gap-10 max-w-7xl mx-auto">
           <div className="px-[15px] w-[140px] h-[70px] flex items-center">
             <Image
               src="/assets/logo.png"
@@ -38,10 +38,10 @@ const Page = () => {
 
           <div className="px-[15px] w-250 h-25 flex flex-col justify-center items-end">
             <div className="w-full">
-              <ul className="flex w-full justify-end items-center">
+              <ul className="flex w-full justify-end items-center text-[13px] uppercase">
                 <li>
                   <button className="bg-blue-600 text-white mr-[10px] px-4 py-1 animate-pulse border-r cursor-pointer hover:text-green-700">
-                    Book Online
+                    BOOK ONLINE
                   </button>
                 </li>
                 <li className="mr-[15px] pr-[15px] border-r cursor-pointer hover:text-green-700">
@@ -60,7 +60,7 @@ const Page = () => {
                       alt="phone"
                       width={40}
                       height={40}
-                      className="object-contain border-r-amber-50 pr-4"
+                      className="object-contain border-r pr-4"
                     />
                     <Image
                       src="/assets/icon_email.png"
@@ -75,7 +75,7 @@ const Page = () => {
             </div>
 
             <div className="w-full mt-3">
-              <ul className="flex justify-end items-top text-[18px]">
+              <ul className="flex justify-end items-top text-[14px] uppercase">
                 <li className="mr-[27px] cursor-pointer hover:text-green-700">
                   Who We Are
                 </li>
@@ -111,8 +111,8 @@ const Page = () => {
         {/* About Section */}
         <section className="py-12 px-4 md:px-12">
           <div className="mx-auto w-[80%] max-w-7xl">
-            <div className="flex flex-col md:flex-row items-center md:items-stretch gap-8">
-              <div className="md:w-5/12 flex items-center">
+            <div className="flex flex-col md:flex-row items-start md:items-stretch gap-8">
+              <div className="md:w-5/12 flex items-start flex-col">
                 <p className="text-2xl leading-relaxed py-5 font-optima">
                   Creating exceptional living spaces with robust engineering
                   &amp; an unparalleled delivery without compromising the ethos
@@ -150,7 +150,7 @@ const Page = () => {
         </section>
         {/* Statistics Section */}
         <section className="py-10 bg-[url('https://tridentrealty.co.in/home/images/bg_happy_customer.webp')] bg-repeat bg-center">
-          <div className="mx-auto w-[80%] flex flex-col md:flex-row md:flex-wrap justify-center gap-6">
+          <div className="mx-auto w-[80%] flex flex-col md:flex-row md:flex-wrap justify-center gap-6 max-w-7xl">
             <div
               className="flex-1 min-w-[250px] bg-white rounded-lg shadow p-6 relative 
                 border border-transparent hover:border-green-700
@@ -163,6 +163,7 @@ const Page = () => {
                   alt="Happy Icon 1"
                   width={70}
                   height={70}
+                  className="hover:scale-120 transition duration-500"
                 />
               </div>
               <p className="mt-5 text-sm text-gray-600">
@@ -182,6 +183,7 @@ const Page = () => {
                   alt="Happy Icon 2"
                   width={70}
                   height={70}
+                  className="hover:scale-120 transition duration-500"
                 />
               </div>
               <p className="mt-5 text-sm text-gray-600">
@@ -201,6 +203,7 @@ const Page = () => {
                   alt="Happy Icon 3"
                   width={70}
                   height={70}
+                  className="hover:scale-120 transition duration-500"
                 />
               </div>
               <p className="mt-5 text-sm text-gray-600">HAPPY CUSTOMERS</p>
@@ -218,6 +221,7 @@ const Page = () => {
                   alt="Happy Icon 4"
                   width={70}
                   height={70}
+                  className="hover:scale-120 transition duration-500"
                 />
               </div>
               <p className="mt-5 text-sm text-gray-600">
@@ -227,8 +231,8 @@ const Page = () => {
           </div>
         </section>
         {/*Swipe Image */}
-        <section className="w-full sm:w-[80%] md:w-[80%] mx-auto pt-6 relative">
-          <div className="relative">
+        <section className="w-full max-w-7xl mx-auto my-10">
+          <div className="relative mx-auto px-6">
             <Swiper
               modules={[Navigation, Autoplay]}
               spaceBetween={20}
@@ -258,83 +262,122 @@ const Page = () => {
                 </SwiperSlide>
               ))}
             </Swiper>
-            <div className="swiper-button-prev absolute top-1/2 left-0 -translate-y-1/2 -translate-x-1/2 z-10 bg-white p-4 rounded-full shadow-md cursor-pointer hover:bg-green-700">
+            <div className="swiper-button-prev absolute top-1/2 left-0 -translate-y-1/2  z-10 bg-white p-4 rounded-full shadow-md cursor-pointer hover:bg-green-700">
               <GoArrowLeft />
             </div>
-            <div className="swiper-button-next absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/2 z-10 bg-white p-4 rounded-full shadow-md cursor-pointer hover:bg-green-700">
+            <div className="swiper-button-next absolute top-1/2 right-0 -translate-y-1/2  z-10 bg-white p-4 rounded-full shadow-md cursor-pointer hover:bg-green-700">
               <GoArrowRight />
             </div>
           </div>
         </section>
-        {/*Project Section*/}
-        <section className="w-full flex flex-col items-center py-10">
-          <h2 className="text-3xl font-semibold mb-10">PROJECTS</h2>
+        {/* Project Section */}
+        <section className="w-full flex flex-col items-center py-6">
+          <div className="w-full max-w-7xl mx-auto flex flex-col items-center">
+            <h2 className="text-3xl font-semibold mb-10">PROJECTS</h2>
 
-          <div className="flex border border-gray-300 overflow-hidden w-4/5 max-w-7xl">
-            <div className="flex-1 border-r border-gray-300 px-3 py-2">
-              <label className="text-gray-500">PROPERTY TYPE</label>
-              <select className="w-full outline-none">
-                <option hidden>Any</option>
-                <option>Apartment</option>
-                <option>Villa</option>
-                <option>Office</option>
-              </select>
-            </div>
+            <div className="w-full px-6">
+              <div className="flex border border-gray-300 overflow-hidden w-full max-w-7xl mx-auto">
+                <div className="flex-1 border-r border-gray-300 px-3 py-2">
+                  <label className="text-gray-500">PROPERTY TYPE</label>
+                  <select className="w-full outline-none">
+                    <option hidden>Any</option>
+                    <option>Apartment</option>
+                    <option>Villa</option>
+                    <option>Office</option>
+                  </select>
+                </div>
 
-            <div className="flex-1 border-r border-gray-300 px-3 py-2">
-              <label className="text-gray-500">LOCATIONS</label>
-              <select className="w-full outline-none">
-                <option hidden>Any</option>
-                <option>Delhi</option>
-                <option>Mumbai</option>
-                <option>Bangalore</option>
-              </select>
-            </div>
-            <div className="flex-1 border-r border-gray-300 px-3 py-2">
-              <label className="text-gray-500">STATUS</label>
-              <select className="w-full outline-none">
-                <option hidden>Any</option>
-                <option>Ongoing</option>
-                <option>Completed</option>
-                <option>Upcoming</option>
-              </select>
-            </div>
+                <div className="flex-1 border-r border-gray-300 px-3 py-2">
+                  <label className="text-gray-500">LOCATIONS</label>
+                  <select className="w-full outline-none">
+                    <option hidden>Any</option>
+                    <option>Delhi</option>
+                    <option>Mumbai</option>
+                    <option>Bangalore</option>
+                  </select>
+                </div>
 
-            <div className="px-3 py-2">
-              <button className="bg-blue-900 text-white px-6 py-3 rounded-md hover:bg-green-700 hover:cursor-pointer">
-                Search Properties
-              </button>
+                <div className="flex-1 border-r border-gray-300 px-3 py-2">
+                  <label className="text-gray-500">STATUS</label>
+                  <select className="w-full outline-none">
+                    <option hidden>Any</option>
+                    <option>Ongoing</option>
+                    <option>Completed</option>
+                    <option>Upcoming</option>
+                  </select>
+                </div>
+
+                <div className="px-3 py-2">
+                  <button className="bg-blue-900 text-white px-6 py-3 rounded-md hover:bg-green-700 hover:cursor-pointer">
+                    Search Properties
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
         {/* Media Section */}
-        <section className="flex flex-wrap justify-center items-center gap-6 py-6 w-full">
-          {["villa1", "villa2", "villa3"].map((villa, index) => (
-            <div
-              key={index}
-              className="min-w-[250px] sm:w-[300px] md:w-[400px] border-b border-green-600 hover:border-gray-400 transition cursor-pointer"
-            >
+        <section className="w-full py-6">
+          <div className="w-[90%] max-w-7xl mx-auto flex flex-wrap justify-center items-center gap-6">
+            <div className="min-w-[200px] sm:w-[300px] md:w-[400px] border-b border-green-600 hover:border-gray-400 transition cursor-pointer">
               <div className="overflow-hidden transition-transform duration-500 hover:scale-105">
                 <Image
-                  src={`/assets/${villa}.webp`}
-                  alt={villa}
+                  src="/assets/villa1.webp"
+                  alt="villa1"
                   width={400}
                   height={400}
                   className="w-full h-auto object-cover"
                 />
               </div>
               <div className="py-3">
-                <p className="font-bold text-lg mb-2 sm:mb-3">Media Centre</p>
+                <p className="font-bold text-lg mb-3 sm:mb-3 uppercase">Trident Hills</p>
                 <p className="text-gray-500 text-sm sm:text-base">
-                  Take a look at what we&apos;ve been up to in the media and other
-                  coverages related to the brand.
+                  Residential - Chandigarh
                 </p>
               </div>
             </div>
-          ))}
+
+            <div className="min-w-[200px] sm:w-[300px] md:w-[400px] border-b border-green-600 hover:border-gray-400 transition cursor-pointer">
+              <div className="overflow-hidden transition-transform duration-500 hover:scale-105">
+                <Image
+                  src="/assets/villa2.webp"
+                  alt="villa2"
+                  width={400}
+                  height={400}
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+              <div className="py-3">
+                <p className="font-bold text-lg mb-3 sm:mb-3 uppercase">Windsong Residences</p>
+                <p className="text-gray-500 text-sm sm:text-base">
+                  Residential - Panchkula
+                </p>
+              </div>
+            </div>
+ 
+            <div className="min-w-[200px] sm:w-[300px] md:w-[400px] border-b border-green-600 hover:border-gray-400 transition cursor-pointer">
+              <div className="overflow-hidden transition-transform duration-500 hover:scale-105">
+                <Image
+                  src="/assets/villa3.webp"
+                  alt="villa3"
+                  width={400}
+                  height={400}
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+              <div className="py-3">
+                <p className="font-bold text-lg mb-3 sm:mb-3 uppercase">The Westpark</p>
+                <p className="text-gray-500 text-sm sm:text-base">
+                  Residential - Maharashtra
+                </p>
+              </div>
+            </div>
+          </div>
         </section>
+
         {/* Our Presence Section */}
+
         <section
           className="py-10 mt-10 bg-repeat"
           style={{
@@ -342,12 +385,12 @@ const Page = () => {
               "url('https://tridentrealty.co.in/home/images/bg_happy_customer.webp')",
           }}
         >
-          <div className="w-[80%] mx-auto">
+          <div className="w-full mx-auto max-w-7xl">
             <h2 className="text-center text-3xl font-semibold text-gray-700 mb-8">
               OUR PRESENCE
             </h2>
 
-            <div className="flex flex-col md:flex-row justify-between items-center gap-6 px-8">
+            <div className="flex flex-col md:flex-row md:flex-wrap justify-center gap-6">
               <div
                 className="flex-1 w-full md:w-auto h-40 bg-white rounded-md shadow p-6 
                 border border-transparent hover:border-green-700 
@@ -403,9 +446,9 @@ const Page = () => {
             </div>
           </div>
         </section>
-        {/* Connect With Us Section */}
-        <section className="w-[80%] mx-auto flex flex-col sm:flex-row justify-center items-center gap-10 py-10 flex-wrap">
-          <div className="shadow-lg overflow-hidden w-full sm:w-[400px] bg-white">
+        {/*gallery, social media, media center*/}
+        <section className="flex flex-col w-full sm:flex-row justify-center items-center gap-10 px-6 flex-wrap pt-10">
+          <div className="shadow-lg overflow-hidden w-full sm:w-[400px] bg-white border-b-gray-600  hover:border-b-1 hover:border-green-600">
             <Image
               src="/assets/image1.webp"
               alt="Gallery"
@@ -413,19 +456,19 @@ const Page = () => {
               height={250}
               className="object-cover hover:scale-105 transition duration-500 hover:cursor-pointer w-full h-[250px]"
             />
-            <div className="p-3">
-              <h2 className="text-lg mb-3">GALLERY</h2>
-              <p className="text-gray-500 text-sm mb-3">
+            <div className="p-7 w-full ">
+              <h2 className="text-xl mb-3">GALLERY</h2>
+              <p className="text-gray-600 text-sm mb-3">
                 Go through our selection of images and videos to know more about
                 Trident Realty
               </p>
-              <button className="border px-2 py-1 rounded-sm hover:bg-green-600 transition hover:cursor-pointer">
+              <button className="border px-2 py-1 mt-5 rounded-sm border-gray-500 hover:bg-green-600 transition duration-500 hover:text-white hover:cursor-pointer">
                 Read More &gt;
               </button>
             </div>
           </div>
 
-          <div className="shadow-lg overflow-hidden w-full sm:w-[400px] bg-white">
+          <div className="shadow-lg overflow-hidden w-full sm:w-[400px] bg-white border-b-gray-600 hover:border-b-1 hover:border-green-600">
             <Image
               src="/assets/image2.webp"
               alt="Social Media"
@@ -433,19 +476,19 @@ const Page = () => {
               height={250}
               className="object-cover hover:scale-105 transition duration-500 hover:cursor-pointer w-full h-[250px]"
             />
-            <div className="p-3">
-              <h2 className="text-lg mb-3">SOCIAL MEDIA</h2>
+            <div className="p-7 w-full">
+              <h2 className="text-xl mb-3">SOCIAL MEDIA</h2>
               <p className="text-gray-500 text-sm mb-3">
                 Join the social media family of Trident Realty and get updates
                 on the latest developments and happenings.
               </p>
-              <button className="border px-2 py-1 rounded-sm hover:bg-green-600 transition hover:cursor-pointer">
+              <button className="border px-2 py-1 mt-5 rounded-sm border-gray-500 hover:bg-green-600 transition duration-500 hover:text-white hover:cursor-pointer">
                 Read More &gt;
               </button>
             </div>
           </div>
 
-          <div className="shadow-lg overflow-hidden w-full sm:w-[400px] bg-white">
+          <div className="shadow-lg overflow-hidden w-full sm:w-[400px] bg-white border-b-gray-600 border-transparent hover:border-b-1 hover:border-green-600">
             <Image
               src="/assets/image3.webp"
               alt="Media Center"
@@ -453,13 +496,13 @@ const Page = () => {
               height={250}
               className="object-cover hover:scale-105 transition duration-500 hover:cursor-pointer w-full h-[250px]"
             />
-            <div className="p-3">
-              <h2 className="text-lg mb-3">MEDIA CENTER</h2>
+            <div className="p-7 w-full">
+              <h2 className="text-xl mb-3">MEDIA CENTER</h2>
               <p className="text-gray-500 text-sm mb-3">
                 Take a look at what we&apos;ve been up to in the media and other
                 coverages related to the brand.
               </p>
-              <button className="border px-2 py-1 rounded-sm hover:bg-green-600 transition hover:cursor-pointer">
+              <button className="border px-2 py-1 mt-5 rounded-sm border-gray-500 hover:bg-green-600 transition duration-500 hover:text-white hover:cursor-pointer">
                 Read More &gt;
               </button>
             </div>
@@ -495,30 +538,30 @@ const Page = () => {
         </section>
         <div className="w-full h-[8px] bg-gradient-to-r from-[#0a2d6e] to-green-600 mt-6"></div>
         {/* Get In Touch Section */}
-        <div className="bg-gray-50 py-10 px-8 shadow-md">
-          <div className="w-[80%] mx-auto">
+        <div className="bg-gray-50 py-10 px-8 shadow-md ">
+          <div className="w-[80%] mx-auto flex flex-col max-w-7xl">
             <h2 className="text-2xl font-semibold text-blue-900 mb-4">
               GET IN TOUCH
             </h2>
-            <form className="w-full flex flex-col md:flex-row gap-4">
+            <form className="w-full flex flex-col md:flex-row md:flex-wrap gap-4">
               <input
                 type="text"
                 placeholder="Your name"
-                className="flex-1 border border-gray-300 rounded px-4 py-2"
+                className="w-full md:flex-1 border border-gray-300 rounded px-4 py-2"
               />
               <input
                 type="email"
                 placeholder="Email"
-                className="flex-1 border border-gray-300 rounded px-4 py-2"
+                className="w-full md:flex-1 border border-gray-300 rounded px-4 py-2"
               />
               <input
                 type="tel"
                 placeholder="Mobile Number"
-                className="flex-1 border border-gray-300 rounded px-4 py-2"
+                className="w-full md:flex-1 border border-gray-300 rounded px-4 py-2"
               />
               <button
                 type="submit"
-                className="bg-blue-900 text-white font-semibold px-12 py-3 rounded hover:bg-green-800 transition hover:cursor-pointer"
+                className="w-full md:w-auto bg-blue-900 text-white font-semibold px-12 py-3 rounded hover:bg-green-800 transition hover:cursor-pointer"
               >
                 SUBMIT
               </button>
@@ -527,7 +570,7 @@ const Page = () => {
         </div>
         {/* Footer Section */}
         <section className="bg-[url('https://tridentrealty.co.in/home/images/bg_happy_customer.webp')] bg-repeat bg-center py-10 px-6">
-          <div className="mx-auto w-[80%] grid grid-cols-2 md:grid-cols-5 gap-8 text-md text-center md:text-left">
+          <div className="mx-auto w-[80%] grid grid-cols-2 md:grid-cols-5 gap-8 text-md text-center md:text-left max-w-7xl">
             <div>
               <h3 className="text-blue-900 font-semibold mb-3 text-xl">
                 WHO WE ARE
@@ -607,7 +650,7 @@ const Page = () => {
         </section>
         {/* Contact Info Section */}
         <section className="bg-[url('https://tridentrealty.co.in/home/images/bg_happy_customer.webp')] bg-repeat bg-center py-6 shadow-sm border-gray-400 border-t">
-          <div className="mx-auto w-[80%] flex flex-col md:flex-row items-center md:items-start justify-between gap-8 px-4 text-gray-800 text-center md:text-left">
+          <div className="mx-auto w-[80%] flex flex-col md:flex-row items-center md:items-start justify-between gap-8 px-4 text-gray-800 text-center md:text-left max-w-7xl">
             <div className="flex items-center gap-3 justify-center md:justify-start">
               <MdOutlinePhoneInTalk size={34} />
               <p>
@@ -647,7 +690,7 @@ const Page = () => {
         </section>
         {/* Footer Bottom Section */}
         <footer className="bg-[#0a2d6e] text-white py-8 text-sm">
-          <div className="mx-auto w-[80%] flex flex-col md:flex-row items-center justify-between gap-2 px-4">
+          <div className="mx-auto w-[80%] flex flex-col md:flex-row items-center justify-between gap-2 px-4 max-w-7xl">
             <div className="text-center md:text-left">
               <p>© Trident Realty, 2025 All Rights Reserved</p>
               <div className="flex flex-wrap justify-center md:justify-start gap-2 text-white/90 mt-1">
