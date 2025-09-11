@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
@@ -20,24 +21,53 @@ const scrollableImage = [
   "https://tridentrealty.co.in/uploads/banner/17087006552469.webp",
   "https://tridentrealty.co.in/uploads/banner/17087006907349.webp",
 ];
+
 const Page = () => {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <>
       <div className="bg-white text-black w-full h-full">
-        <header className="flex flex-col md:flex-row justify-center items-center py-2 gap-10 max-w-7xl mx-auto">
-          <div className="px-[15px] w-[140px] h-[70px] flex items-center">
-            <Image
-              src="/assets/logo.png"
-              alt="logo"
-              width={200}
-              height={100}
-              className="object-contain"
-              priority
-            />
-          </div>
+        <header className="w-full border-b">
+          <div className="max-w-7xl mx-auto flex justify-between items-center py-3 px-4 md:px-8">
+            <div className="w-[120px] h-[60px] flex items-center">
+              <Image
+                src="/assets/logo.png"
+                alt="logo"
+                width={200}
+                height={100}
+                className="object-contain"
+                priority
+              />
+            </div>
+            <div className="flex space-x-4 md:hidden">
+              <button className="bg-blue-600 text-white mr-[10px] px-4 py-1 animate-pulse border-r cursor-pointer hover:text-green-700">
+                BOOK ONLINE
+              </button>
 
-          <div className="px-[15px] w-250 h-25 flex flex-col justify-center items-end">
-            <div className="w-full">
+              <Image
+                src="/assets/icon_phone.png"
+                alt="phone"
+                width={30}
+                height={30}
+                className="object-contain"
+              />
+              <Image
+                src="/assets/icon_email.png"
+                alt="email"
+                width={25}
+                height={25}
+                className="object-contain"
+              />
+            </div>
+
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="md:hidden p-2 border rounded"
+            >
+              {isOpen ? "✖" : "☰"}
+            </button>
+
+            <div className="hidden md:flex flex-col items-end w-full">
               <ul className="flex w-full justify-end items-center text-[13px] uppercase">
                 <li>
                   <button className="bg-blue-600 text-white mr-[10px] px-4 py-1 animate-pulse border-r cursor-pointer hover:text-green-700">
@@ -53,29 +83,25 @@ const Page = () => {
                 <li className="mr-[15px] pr-[15px] border-r cursor-pointer hover:text-green-700">
                   EMPLOYEE LOGIN
                 </li>
-                <li className="mr-[15px] pr-[15px] cursor-pointer hover:text-green-700">
-                  <div className="flex space-x-4">
-                    <Image
-                      src="/assets/icon_phone.png"
-                      alt="phone"
-                      width={40}
-                      height={40}
-                      className="object-contain border-r pr-4"
-                    />
-                    <Image
-                      src="/assets/icon_email.png"
-                      alt="email"
-                      width={25}
-                      height={25}
-                      className="object-contain"
-                    />
-                  </div>
+                <li className="mr-[15px] pr-[15px] cursor-pointer hover:text-green-700 flex space-x-4">
+                  <Image
+                    src="/assets/icon_phone.png"
+                    alt="phone"
+                    width={40}
+                    height={40}
+                    className="object-contain border-r pr-4"
+                  />
+                  <Image
+                    src="/assets/icon_email.png"
+                    alt="email"
+                    width={25}
+                    height={25}
+                    className="object-contain"
+                  />
                 </li>
               </ul>
-            </div>
 
-            <div className="w-full mt-3">
-              <ul className="flex justify-end items-top text-[14px] uppercase">
+              <ul className="flex justify-end items-top text-[14px] uppercase mt-3">
                 <li className="mr-[27px] cursor-pointer hover:text-green-700">
                   Who We Are
                 </li>
@@ -94,6 +120,28 @@ const Page = () => {
               </ul>
             </div>
           </div>
+
+          {isOpen && (
+            <div className="md:hidden bg-gray-50 border-t">
+              <ul className="flex flex-col space-y-4 py-4 text-center uppercase text-sm">
+                <li className="cursor-pointer hover:text-green-700">
+                  Who We Are
+                </li>
+                <li className="cursor-pointer hover:text-green-700">
+                  Projects
+                </li>
+                <li className="cursor-pointer hover:text-green-700">
+                  Customer Zone
+                </li>
+                <li className="cursor-pointer hover:text-green-700">
+                  Contact Us
+                </li>
+                <li className="cursor-pointer text-green-600 hover:text-green-700">
+                  Privilege Passport
+                </li>
+              </ul>
+            </div>
+          )}
         </header>
 
         {/*Video Section*/}
@@ -319,7 +367,7 @@ const Page = () => {
 
         {/* Media Section */}
         <section className="w-full py-6">
-          <div className="w-[90%] max-w-7xl mx-auto flex flex-wrap justify-center items-center gap-6">
+          <div className="w-full max-w-7xl mx-auto flex flex-wrap justify-center items-center gap-6">
             <div className="min-w-[200px] sm:w-[300px] md:w-[400px] border-b border-green-600 hover:border-gray-400 transition cursor-pointer">
               <div className="overflow-hidden transition-transform duration-500 hover:scale-105">
                 <Image
@@ -331,7 +379,9 @@ const Page = () => {
                 />
               </div>
               <div className="py-3">
-                <p className="font-bold text-lg mb-3 sm:mb-3 uppercase">Trident Hills</p>
+                <p className="font-bold text-lg mb-3 sm:mb-3 uppercase">
+                  Trident Hills
+                </p>
                 <p className="text-gray-500 text-sm sm:text-base">
                   Residential - Chandigarh
                 </p>
@@ -349,13 +399,15 @@ const Page = () => {
                 />
               </div>
               <div className="py-3">
-                <p className="font-bold text-lg mb-3 sm:mb-3 uppercase">Windsong Residences</p>
+                <p className="font-bold text-lg mb-3 sm:mb-3 uppercase">
+                  Windsong Residences
+                </p>
                 <p className="text-gray-500 text-sm sm:text-base">
                   Residential - Panchkula
                 </p>
               </div>
             </div>
- 
+
             <div className="min-w-[200px] sm:w-[300px] md:w-[400px] border-b border-green-600 hover:border-gray-400 transition cursor-pointer">
               <div className="overflow-hidden transition-transform duration-500 hover:scale-105">
                 <Image
@@ -367,7 +419,9 @@ const Page = () => {
                 />
               </div>
               <div className="py-3">
-                <p className="font-bold text-lg mb-3 sm:mb-3 uppercase">The Westpark</p>
+                <p className="font-bold text-lg mb-3 sm:mb-3 uppercase">
+                  The Westpark
+                </p>
                 <p className="text-gray-500 text-sm sm:text-base">
                   Residential - Maharashtra
                 </p>
@@ -385,7 +439,7 @@ const Page = () => {
               "url('https://tridentrealty.co.in/home/images/bg_happy_customer.webp')",
           }}
         >
-          <div className="w-full mx-auto max-w-7xl">
+          <div className=" mx-auto w-full px-6 max-w-7xl">
             <h2 className="text-center text-3xl font-semibold text-gray-700 mb-8">
               OUR PRESENCE
             </h2>
