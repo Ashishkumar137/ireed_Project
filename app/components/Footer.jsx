@@ -52,17 +52,17 @@ const Footer = () => {
             <input
               type="text"
               placeholder="Your name"
-              className="w-full md:flex-1 border border-gray-300 bg-white rounded px-4 py-2"
+              className="w-full md:flex-1 border border-gray-300 bg-white rounded px-4 py-2 outline-0"
             />
             <input
               type="email"
               placeholder="Email"
-              className="w-full md:flex-1 border border-gray-300 bg-white rounded px-4 py-2"
+              className="w-full md:flex-1 border border-gray-300 bg-white rounded px-4 py-2 outline-0"
             />
             <input
               type="tel"
               placeholder="Mobile Number"
-              className="w-full md:flex-1 border border-gray-300 bg-white rounded px-4 py-2"
+              className="w-full md:flex-1 border border-gray-300 bg-white rounded px-4 py-2 outline-0"
             />
             <button
               type="submit"

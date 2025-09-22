@@ -8,12 +8,12 @@ const Header = () => {
   return (
     <header className="w-full border-b">
       <div className="max-w-7xl mx-auto flex justify-between items-center py-3 px-2 md:px-4">
-        <div className="w-full flex items-center mr-2">
+        <div className="flex items-center mr-2">
           <Image
             src="/assets/logo.png"
             alt="logo"
-            width={130}
-            height={130}
+            width={150}
+            height={150}
             className="object-contain"
             priority
           />
@@ -68,6 +68,7 @@ const Header = () => {
             </li>
             <li className="mr-3 pr-3 cursor-pointer hover:text-green-700 flex space-x-4">
               <Image src="/assets/icon_phone.png" alt="phone" width={40} height={40} className="object-contain border-r pr-4" />
+              <div className="w-[1px] h-5 bg-gray-600 "></div>
               <Image src="/assets/icon_email.png" alt="email" width={25} height={25} className="object-contain" />
             </li>
           </ul>

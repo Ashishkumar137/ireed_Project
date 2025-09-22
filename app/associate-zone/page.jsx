@@ -130,7 +130,7 @@ const AssociateLogin = () => {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full border border-gray-300 bg-white rounded-md p-4"
+                className="w-full border border-gray-300 bg-white rounded-md p-4 outline-0"
               />
               <input
                 type="email"
@@ -139,7 +139,7 @@ const AssociateLogin = () => {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full border border-gray-300 bg-white rounded-md p-4"
+                className="w-full border border-gray-300 bg-white rounded-md p-4 outline-0"
               />
               <input
                 type="text"
@@ -148,7 +148,7 @@ const AssociateLogin = () => {
                 value={formData.location}
                 onChange={handleChange}
                 required
-                className="w-full border border-gray-300 bg-white rounded-md p-4"
+                className="w-full border border-gray-300 bg-white rounded-md p-4 outline-0"
               />
               <input
                 type="text"
@@ -157,7 +157,7 @@ const AssociateLogin = () => {
                 value={formData.mobile}
                 onChange={handleChange}
                 required
-                className="w-full border border-gray-300 bg-white rounded-md p-4"
+                className="w-full border border-gray-300 bg-white rounded-md p-4 outline-0"
               />
 
               <div className="flex items-center gap-2 text-sm">
