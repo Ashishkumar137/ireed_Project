@@ -1,103 +1,180 @@
-import Image from "next/image";
+"use client";
+import React, { useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
 
-export default function Home() {
+export default function Page() {
+  const [formData, setFormData] = useState({
+    name: "",
+    designation: "",
+    linkedinId: "",
+    photo: null,
+    title: "",
+    article: "",
+    attachedFile: null,
+  });
+
+  const articleImage = [
+    "/article1.webp",
+    "/article2.webp",
+    "/article3.webp",
+    "/article4.webp",
+    "/article5.webp",
+  ];
+
+  const handleChange = (e) => {
+    const { name, value, files } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: files ? files[0] : value,
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Form Data:", formData);
+    alert("Form submitted!");
+    setFormData({
+      name: "",
+      designation: "",
+      company: "",
+      linkedinId: "",
+      photo: null,
+      title: "",
+      article: "",
+      attachedFile: null,
+    });
+  };
+
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="min-h-screen bg-gray-200 py-4 px-4 border-white">
+      <div className="max-w-4xl mx-auto bg-gray-300 p-8 rounded border-10">
+        <img src="/IREED_Logo.png" width={300} className="mb-5" />
+        <p className="text-gray-700 text-base max-w-3xl pl-5">
+          Share Insights, submit Impactful Articles, and Inspire the Real Estate
+          industry with Thought Leadership, Innovation, and Real-world
+          expertise.
+        </p>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+        <div className="my-6 relative">
+          <Swiper
+            modules={[Navigation]}
+            spaceBetween={20}
+            slidesPerView={1}
+            navigation
+            breakpoints={{
+              640: { slidesPerView: 1 },
+              768: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 },
+            }}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            {articleImage.map((src, index) => (
+              <SwiperSlide key={index}>
+                <div className="border border-gray-300 h-full flex flex-col items-center justify-center bg-gray-100 text-gray-600">
+                  <img
+                    src={src}
+                    alt={`Article ${index + 1}`}
+                    className="object-cover"
+                  />
+                  <p>Article {index + 1}</p>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+          
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+        <div className="text-center pb-8 ">
+            <button
+              className="bg-blue-900 text-white py-3 px-8 rounded hover:bg-blue-800"
+            >
+              View All
+            </button>
+          </div>
+
+        <form className="space-y-4 " onSubmit={handleSubmit}>
+          <input
+            type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            placeholder="Name (Author)"
+            className="w-full border p-3 rounded bg-white text-black"
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
+
+          <input
+            type="text"
+            name="designation"
+            value={formData.designation}
+            onChange={handleChange}
+            placeholder="Designation"
+            className="w-full border p-3 rounded bg-white text-black"
           />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
+          <input
+            type="text"
+            name="company"
+            value={formData.company}
+            onChange={handleChange}
+            placeholder="Company"
+            className="w-full border p-3 rounded bg-white text-black"
           />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+          <input
+            type="text"
+            name="linkedinId"
+            value={formData.linkedinId}
+            onChange={handleChange}
+            placeholder="LinkedIn ID"
+            className="w-full border p-3 rounded bg-white text-black"
+          />
+
+          <input
+            type="file"
+            name="photo"
+            onChange={handleChange}
+            accept="image/*"
+            className="w-full border p-3 rounded bg-white text-black"
+          />
+
+          <input
+            type="text"
+            name="title"
+            value={formData.title}
+            onChange={handleChange}
+            placeholder="Title"
+            className="w-full border p-3 rounded bg-white text-black"
+          />
+
+          <textarea
+            name="article"
+            value={formData.article}
+            onChange={handleChange}
+            placeholder="Article"
+            className="w-full border p-3 h-48 rounded bg-white text-black"
+          />
+
+          <input
+            type="file"
+            name="attachedFile"
+            onChange={handleChange}
+            className="w-full border p-3 rounded bg-white text-black"
+          />
+
+          <div className="text-center pt-4">
+            <button
+              type="submit"
+              className="bg-blue-900 text-white py-3 px-8 rounded hover:bg-blue-800"
+            >
+              Submit
+            </button>
+          </div>
+        </form>
+
+        <div className="text-center text-sm text-gray-500 mt-6">
+          © 2025 IREED Academy | All Rights Reserved
+        </div>
+      </div>
     </div>
   );
 }
