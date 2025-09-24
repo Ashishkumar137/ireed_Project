@@ -1,26 +1,17 @@
 "use client";
 import Image from "next/image";
 import { GoArrowRight } from "react-icons/go";
+import Banner from "../components/Banner";
+import SectionHeader from "../components/SectionHeader";
 
 export default function BookOnlinePage() {
   return (
     <div>
-      <div className="w-full h-[300px] sm:h-[400px] md:h-[500px] relative overflow-hidden">
-        <Image
-          src="/assets/pay_banner.jpg"
-          alt="Banner"
-          fill
-          className="object-cover"
-        />
-
-        <div className="absolute inset-0 flex items-end pb-10 pl-4">
-          <div className="container mx-auto px-4 max-w-7xl w-full">
-           <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">
-              BOOK ONLINE
-            </h1>
-          </div>
-        </div>
-      </div>
+      <Banner
+        imageSrc="/assets/pay_banner.jpg"
+        alt="Book Online Banner"
+        heading="BOOK ONLINE"
+      />
       <div className="mx-auto max-w-7xl py-10 px-6">
         <div className="w-[50%] bg-white flex flex-row justify-start items-start">
           <div className="bg-green-900 py-6 flex flex-col items-center px-8 w-full max-w-md">

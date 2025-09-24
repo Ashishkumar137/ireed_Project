@@ -81,7 +81,7 @@ const Header = () => {
               <Link href="/projects">Projects</Link>
             </li>
             <li className="cursor-pointer hover:text-green-700">
-              <Link href="/customer-zone">Customer Zone</Link>
+              <Link href="/customer_zone">Customer Zone</Link>
             </li>
             <li className="cursor-pointer hover:text-green-700">
               <Link href="/contact-us">Contact Us</Link>

@@ -10,15 +10,14 @@ import { SiYoutube } from "react-icons/si";
 import { IoLocationOutline } from "react-icons/io5";
 import { TfiEmail } from "react-icons/tfi";
 import { MdOutlinePhoneInTalk } from "react-icons/md";
+import SectionHeader from "../components/SectionHeader";
 
 const Footer = () => {
   return (
     <>
       {/* Follow Us Section */}
       <section className="py-10 text-center px-8">
-        <h2 className="text-3xl font-semibold text-gray-800 mb-10">
-          FOLLOW US
-        </h2>
+        <SectionHeader title="FOLLOW US"/>
         <div className="flex justify-center items-center gap-10 text-2xl text-gray-700">
           <a
             href="#"
@@ -164,7 +163,7 @@ const Footer = () => {
                 href="#"
                 className="text-blue-600 font-semibold hover:underline"
               >
-                +91 702 603 5000
+                +91 90906 04013
               </a>
             </p>
           </div>
@@ -172,23 +171,23 @@ const Footer = () => {
           <div className="flex items-start gap-3 justify-center md:justify-start">
             <IoLocationOutline size={34} />
             <p>
-              <span className="font-bold">Corporate Office</span>
+              <span className="font-bold">Office Suite</span>
               <br />
-              Trident Realty, 16th Floor, DLF Square,
+              8 & 9, 3rd Floor, Ninex City Mart,
               <br />
-              DLF Phase-II, Jacaranda Marg,
+              Sohna Road, Near Radisson Hotel, Sector 49,
               <br />
-              Gurugram - 122002, Haryana (India).
+              Gurugram - 122018 Haryana (India).
             </p>
           </div>
 
           <div className="flex items-center gap-3 justify-center md:justify-start">
             <TfiEmail size={34} />
             <a
-              href="mailto:care@tridentrealty.co.in"
+              href="mailto:info@ireedindia.com"
               className="text-blue-600 font-semibold hover:underline"
             >
-              care@tridentrealty.co.in
+              info@ireedindia.com
             </a>
           </div>
         </div>
@@ -197,7 +196,7 @@ const Footer = () => {
       <footer className="bg-[#0a2d6e] text-white py-8 text-sm">
         <div className="mx-auto w-[80%] flex flex-col md:flex-row items-center justify-between gap-2 px-4 max-w-7xl">
           <div className="text-center md:text-left">
-            <p>© Trident Realty, 2025 All Rights Reserved</p>
+            <p>©  IREED Academy (India) Private Limited All Rights Reserved</p>
             <div className="flex flex-wrap justify-center md:justify-start gap-2 text-white/90 mt-1">
               <a href="#" className="hover:underline font-semibold">
                 Terms of Use
