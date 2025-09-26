@@ -1,11 +1,13 @@
 "use client";
-import React from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
 import { GoArrowLeft } from "react-icons/go";
 import { GoArrowRight } from "react-icons/go";
+import Projects from "./projects/page";
+import React, { useRef } from "react";
+
 const scrollableImage = [
   "https://tridentrealty.co.in/uploads/banner/17087007654384.webp",
   "https://tridentrealty.co.in/uploads/banner/17087008185632.webp",
@@ -14,6 +16,9 @@ const scrollableImage = [
 ];
 
 const Page = () => {
+  const prevRef = useRef(null);
+  const nextRef = useRef(null);
+
   return (
     <>
       <div className="bg-white text-black w-full h-full max-full">
@@ -43,7 +48,7 @@ const Page = () => {
               <div className="hidden md:block w-[6px] bg-gradient-to-b from-[#0a2d6e] to-green-600 mx-6"></div>
 
               <div className="md:w-7/12">
-                <h1 className="text-2xl md:text-3xl font-semibold text-green-700 mb-6">
+                <h1 className="text-2xl md:text-3xl text-green-700 mb-6">
                   BUILDING THE NATION
                 </h1>
                 <p className="text-base md:text-md text-gray-600 leading-relaxed mb-6">
@@ -182,124 +187,28 @@ const Page = () => {
                 </SwiperSlide>
               ))}
             </Swiper>
-            <div className="swiper-button-prev absolute top-1/2 left-0 -translate-y-1/2  z-10 bg-white p-4 rounded-full shadow-md cursor-pointer hover:bg-green-700">
+
+            <button
+              ref={prevRef}
+              className="absolute top-1/2 left-0 -translate-y-1/2 z-10 bg-white p-4 rounded-full shadow-md cursor-pointer hover:bg-green-700"
+            >
               <GoArrowLeft />
-            </div>
-            <div className="swiper-button-next absolute top-1/2 right-0 -translate-y-1/2  z-10 bg-white p-4 rounded-full shadow-md cursor-pointer hover:bg-green-700">
+            </button>
+            <button
+              ref={nextRef}
+              className="absolute top-1/2 right-0 -translate-y-1/2 z-10 bg-white p-4 rounded-full shadow-md cursor-pointer hover:bg-green-700"
+            >
               <GoArrowRight />
-            </div>
+            </button>
           </div>
         </section>
         {/* Project Section */}
-        <section className="w-full flex flex-col items-center py-6">
-          <div className="w-full max-w-7xl mx-auto flex flex-col items-center">
-            <h2 className="text-3xl font-semibold mb-10">PROJECTS</h2>
-
-            <div className="w-full px-6">
-              <div className="flex border border-gray-300 overflow-hidden w-full max-w-7xl mx-auto">
-                <div className="flex-1 border-r border-gray-300 px-3 py-2">
-                  <label className="text-gray-500">PROPERTY TYPE</label>
-                  <select className="w-full outline-none">
-                    <option hidden>Any</option>
-                    <option>Apartment</option>
-                    <option>Villa</option>
-                    <option>Office</option>
-                  </select>
-                </div>
-
-                <div className="flex-1 border-r border-gray-300 px-3 py-2">
-                  <label className="text-gray-500">LOCATIONS</label>
-                  <select className="w-full outline-none">
-                    <option hidden>Any</option>
-                    <option>Delhi</option>
-                    <option>Mumbai</option>
-                    <option>Bangalore</option>
-                  </select>
-                </div>
-
-                <div className="flex-1 border-r border-gray-300 px-3 py-2">
-                  <label className="text-gray-500">STATUS</label>
-                  <select className="w-full outline-none">
-                    <option hidden>Any</option>
-                    <option>Ongoing</option>
-                    <option>Completed</option>
-                    <option>Upcoming</option>
-                  </select>
-                </div>
-
-                <div className="px-3 py-2">
-                  <button className="bg-blue-900 text-white px-6 py-3 rounded-md hover:bg-green-700 hover:cursor-pointer">
-                    Search Properties
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Media Section */}
         <section className="w-full py-6">
-          <div className="w-full max-w-7xl mx-auto flex flex-wrap justify-center items-center gap-6">
-            <div className="min-w-[200px] sm:w-[300px] md:w-[400px] border-b border-green-600 hover:border-gray-400 transition cursor-pointer">
-              <div className="overflow-hidden transition-transform duration-500 hover:scale-105">
-                <Image
-                  src="/assets/villa1.webp"
-                  alt="villa1"
-                  width={400}
-                  height={400}
-                  className="w-full h-auto object-cover"
-                />
-              </div>
-              <div className="py-3">
-                <p className="font-bold text-lg mb-3 sm:mb-3 uppercase">
-                  Trident Hills
-                </p>
-                <p className="text-gray-500 text-sm sm:text-base">
-                  Residential - Chandigarh
-                </p>
-              </div>
-            </div>
-
-            <div className="min-w-[200px] sm:w-[300px] md:w-[400px] border-b border-green-600 hover:border-gray-400 transition cursor-pointer">
-              <div className="overflow-hidden transition-transform duration-500 hover:scale-105">
-                <Image
-                  src="/assets/villa2.webp"
-                  alt="villa2"
-                  width={400}
-                  height={400}
-                  className="w-full h-auto object-cover"
-                />
-              </div>
-              <div className="py-3">
-                <p className="font-bold text-lg mb-3 sm:mb-3 uppercase">
-                  Windsong Residences
-                </p>
-                <p className="text-gray-500 text-sm sm:text-base">
-                  Residential - Panchkula
-                </p>
-              </div>
-            </div>
-
-            <div className="min-w-[200px] sm:w-[300px] md:w-[400px] border-b border-green-600 hover:border-gray-400 transition cursor-pointer">
-              <div className="overflow-hidden transition-transform duration-500 hover:scale-105">
-                <Image
-                  src="/assets/villa3.webp"
-                  alt="villa3"
-                  width={400}
-                  height={400}
-                  className="w-full h-auto object-cover"
-                />
-              </div>
-              <div className="py-3">
-                <p className="font-bold text-lg mb-3 sm:mb-3 uppercase">
-                  The Westpark
-                </p>
-                <p className="text-gray-500 text-sm sm:text-base">
-                  Residential - Maharashtra
-                </p>
-              </div>
-            </div>
+          <div className="text-center mb-5">
+            <h2 className="text-3xl ">PROJECTS</h2>
           </div>
+
+          <Projects />
         </section>
 
         {/* Our Presence Section */}
@@ -312,7 +221,7 @@ const Page = () => {
           }}
         >
           <div className=" mx-auto w-full px-6 max-w-7xl">
-            <h2 className="text-center text-3xl font-semibold text-gray-700 mb-8">
+            <h2 className="text-center text-3xl  text-gray-700 mb-8">
               OUR PRESENCE
             </h2>
 
@@ -373,64 +282,68 @@ const Page = () => {
           </div>
         </section>
         {/*gallery, social media, media center*/}
-        <section className="flex flex-col w-full sm:flex-row justify-center items-center gap-10 px-6 flex-wrap pt-10">
-          <div className="shadow-lg overflow-hidden w-full sm:w-[400px] bg-white border-b-gray-600  hover:border-b-1 hover:border-green-600">
-            <Image
-              src="/assets/image1.webp"
-              alt="Gallery"
-              width={500}
-              height={250}
-              className="object-cover hover:scale-105 transition duration-500 hover:cursor-pointer w-full h-[250px]"
-            />
-            <div className="p-7 w-full ">
-              <h2 className="text-xl mb-3">GALLERY</h2>
-              <p className="text-gray-600 text-sm mb-3">
-                Go through our selection of images and videos to know more about
-                Trident Realty
-              </p>
-              <button className="border px-2 py-1 mt-5 rounded-sm border-gray-500 hover:bg-green-600 transition duration-500 hover:text-white hover:cursor-pointer">
-                Read More &gt;
-              </button>
+        <section className="w-full my-10 px-6">
+          <div
+            className="grid gap-8 justify-items-center grid-cols-1 md:grid-cols-3 lg:grid-cols-3 max-w-7xl mx-auto"
+          >
+            <div className="shadow-lg overflow-hidden w-full  bg-white border-b-gray-600 hover:border-b-2 hover:border-green-600 transition duration-500">
+              <Image
+                src="/assets/image1.webp"
+                alt="Gallery"
+                width={500}
+                height={250}
+                className="object-cover hover:scale-105 transition duration-500 hover:cursor-pointer w-full h-[250px]"
+              />
+              <div className="p-7 w-full">
+                <h2 className="text-xl mb-3">GALLERY</h2>
+                <p className="text-gray-600 text-sm mb-3">
+                  Go through our selection of images and videos to know more
+                  about Trident Realty
+                </p>
+                <button className="border px-2 py-1 mt-5 rounded-sm border-gray-500 hover:bg-green-600 transition duration-500 hover:text-white hover:cursor-pointer">
+                  Read More &gt;
+                </button>
+              </div>
             </div>
-          </div>
 
-          <div className="shadow-lg overflow-hidden w-full sm:w-[400px] bg-white border-b-gray-600 hover:border-b-1 hover:border-green-600">
-            <Image
-              src="/assets/image2.webp"
-              alt="Social Media"
-              width={400}
-              height={250}
-              className="object-cover hover:scale-105 transition duration-500 hover:cursor-pointer w-full h-[250px]"
-            />
-            <div className="p-7 w-full">
-              <h2 className="text-xl mb-3">SOCIAL MEDIA</h2>
-              <p className="text-gray-500 text-sm mb-3">
-                Join the social media family of Trident Realty and get updates
-                on the latest developments and happenings.
-              </p>
-              <button className="border px-2 py-1 mt-5 rounded-sm border-gray-500 hover:bg-green-600 transition duration-500 hover:text-white hover:cursor-pointer">
-                Read More &gt;
-              </button>
+            <div className="shadow-lg overflow-hidden w-full  bg-white border-b-gray-600 hover:border-b-2 hover:border-green-600 transition duration-500">
+              <Image
+                src="/assets/image2.webp"
+                alt="Social Media"
+                width={400}
+                height={250}
+                className="object-cover hover:scale-105 transition duration-500 hover:cursor-pointer w-full h-[250px]"
+              />
+              <div className="p-7 w-full">
+                <h2 className="text-xl mb-3">SOCIAL MEDIA</h2>
+                <p className="text-gray-500 text-sm mb-3">
+                  Join the social media family of Trident Realty and get updates
+                  on the latest developments and happenings.
+                </p>
+                <button className="border px-2 py-1 mt-5 rounded-sm border-gray-500 hover:bg-green-600 transition duration-500 hover:text-white hover:cursor-pointer">
+                  Read More &gt;
+                </button>
+              </div>
             </div>
-          </div>
 
-          <div className="shadow-lg overflow-hidden w-full sm:w-[400px] bg-white border-b-gray-600 border-transparent hover:border-b-1 hover:border-green-600">
-            <Image
-              src="/assets/image3.webp"
-              alt="Media Center"
-              width={400}
-              height={250}
-              className="object-cover hover:scale-105 transition duration-500 hover:cursor-pointer w-full h-[250px]"
-            />
-            <div className="p-7 w-full">
-              <h2 className="text-xl mb-3">MEDIA CENTER</h2>
-              <p className="text-gray-500 text-sm mb-3">
-                Take a look at what we&apos;ve been up to in the media and other
-                coverages related to the brand.
-              </p>
-              <button className="border px-2 py-1 mt-5 rounded-sm border-gray-500 hover:bg-green-600 transition duration-500 hover:text-white hover:cursor-pointer">
-                Read More &gt;
-              </button>
+            <div className="shadow-lg overflow-hidden w-full  bg-white border-b-gray-600 hover:border-b-2 hover:border-green-600 transition-all duration-500">
+              <Image
+                src="/assets/image3.webp"
+                alt="Media Center"
+                width={400}
+                height={250}
+                className="object-cover hover:scale-105 transition duration-500 hover:cursor-pointer w-full h-[250px]"
+              />
+              <div className="p-7 w-full">
+                <h2 className="text-xl mb-3">MEDIA CENTER</h2>
+                <p className="text-gray-500 text-sm mb-3">
+                  Take a look at what we&apos;ve been up to in the media and
+                  other coverages related to the brand.
+                </p>
+                <button className="border px-2 py-1 mt-5 rounded-sm border-gray-500 hover:bg-green-600 transition duration-500 hover:text-white hover:cursor-pointer">
+                  Read More &gt;
+                </button>
+              </div>
             </div>
           </div>
         </section>

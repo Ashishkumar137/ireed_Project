@@ -47,7 +47,7 @@ export default function careerPage() {
 
       <div className="my-10 mx-auto w-full ">
         <SectionHeader title="Life at Trident Realty" />
-        <div className="mx-auto w-full px-6 my-10 max-w-7xl flex flex-col md:flex-row gap-8">
+        <div className="mx-auto w-full px-6 my-10 max-w-7xl flex flex-col md:flex-row gap-10">
           <div className="flex flex-col flex-1">
             <p>
               Established in 2008, Trident Realty is an innovation-led,
@@ -82,11 +82,11 @@ export default function careerPage() {
               Customer-centricity, Sustainability, and Well-being.
             </p>
           </div>
-          <div className="flex-1 h-[350px]">
+          <div className="flex-1 ">
             <Image
               src="/assets/philosphy_right.webp"
               alt="philosphy_right"
-              width={800}
+              width={600}
               height={100}
               className="object-cover hover:scale-105 transition duration-500"
             />
@@ -198,24 +198,23 @@ export default function careerPage() {
             </p>
           </div>
           <div className="w-full pt-5">
-            <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
               {values.map((item, i) => (
                 <div
                   key={i}
-                  className="flex flex-col items-center w-full md:w-auto gap-3 p-12"
+                  className="flex flex-col items-center w-full md:w-auto gap-3 p-10"
                 >
                   <div
                     className="w-full flex items-center justify-center bg-white rounded-md shadow 
                 border border-transparent hover:border-green-700 
                 hover:scale-105 cursor-pointer transition duration-500"
                   >
-                    <div className=" border-gray-300 h-[140px] flex justify-center items-center w-full m-6 border-1 rounded">
+                    <div className=" border-gray-300 h-[100px] flex justify-center items-center w-full m-6 border-1 rounded">
                     <Image
                       src={item.icon}
                       alt={item.title}
                       width={64}
                       height={64}
-                      className=""
                     />
                     </div>
 
@@ -240,7 +239,7 @@ export default function careerPage() {
               backgroundImage: "url('/assets/mission_bg.webp')",
             }}
           >
-            <div className=" max-w-7xl justify-center align-center mx-auto w-full px-4 flex flex-col md:flex-row gap-8">
+            <div className=" max-w-7xl justify-center align-center mx-auto w-full px-4 flex flex-col md:flex-row gap-6">
               <div className="relative flex flex-col justify-center text-white p-8 md:p-12">
                 <h3 className="text-xl md:text-2xl font-bold mb-4">VISION</h3>
                 <p className="text-sm md:text-base leading-relaxed">
@@ -253,7 +252,9 @@ export default function careerPage() {
                   nation.
                 </p>
               </div>
-
+              <div className="flex justify-center items-center ">
+                <div className="w-2 h-[80%] border-r-2 border-amber-50 hidden md:block "></div>
+              </div>
               <div className="relative flex flex-col justify-center text-white p-8 md:p-12">
                 <h3 className="text-xl md:text-2xl font-bold mb-4">MISSION</h3>
                 <p className="text-sm md:text-base leading-relaxed">

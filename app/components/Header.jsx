@@ -8,6 +8,9 @@ const Header = () => {
   return (
     <header className="w-full border-b">
       <div className="max-w-7xl mx-auto flex justify-between items-center py-3 px-2 md:px-4">
+        <Link
+            href="/"
+          >
         <div className="flex items-center mr-2">
           <Image
             src="/assets/logo.png"
@@ -18,6 +21,7 @@ const Header = () => {
             priority
           />
         </div>
+        </Link>
 
         <div className="flex space-x-4 md:hidden">
           <Link
@@ -78,7 +82,7 @@ const Header = () => {
               <Link href="/who-we-are">Who We Are</Link>
             </li>
             <li className="cursor-pointer hover:text-green-700">
-              <Link href="/projects">Projects</Link>
+              <Link href="/project-page">Projects</Link>
             </li>
             <li className="cursor-pointer hover:text-green-700">
               <Link href="/customer_zone">Customer Zone</Link>
