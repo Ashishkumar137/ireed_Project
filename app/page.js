@@ -100,7 +100,7 @@ export default function Page() {
             value={formData.name}
             onChange={handleChange}
             placeholder="Name (Author)"
-            className="w-full border p-3 rounded bg-white text-black"
+            className="w-full border p-3 rounded bg-white text-black outline-0"
           />
 
           <input
@@ -109,7 +109,7 @@ export default function Page() {
             value={formData.designation}
             onChange={handleChange}
             placeholder="Designation"
-            className="w-full border p-3 rounded bg-white text-black"
+            className="w-full border p-3 rounded bg-white text-black outline-0"
           />
           <input
             type="text"
@@ -117,7 +117,7 @@ export default function Page() {
             value={formData.company}
             onChange={handleChange}
             placeholder="Company"
-            className="w-full border p-3 rounded bg-white text-black"
+            className="w-full border p-3 rounded bg-white text-black outline-0"
           />
 
           <input
@@ -126,7 +126,7 @@ export default function Page() {
             value={formData.linkedinId}
             onChange={handleChange}
             placeholder="LinkedIn ID"
-            className="w-full border p-3 rounded bg-white text-black"
+            className="w-full border p-3 rounded bg-white text-black outline-0"
           />
 
           <input
@@ -134,7 +134,7 @@ export default function Page() {
             name="photo"
             onChange={handleChange}
             accept="image/*"
-            className="w-full border p-3 rounded bg-white text-black"
+            className="w-full border p-3 rounded bg-white text-black outline-0"
           />
 
           <input
@@ -143,7 +143,7 @@ export default function Page() {
             value={formData.title}
             onChange={handleChange}
             placeholder="Title"
-            className="w-full border p-3 rounded bg-white text-black"
+            className="w-full border p-3 rounded bg-white text-black outline-0"
           />
 
           <textarea
@@ -151,14 +151,14 @@ export default function Page() {
             value={formData.article}
             onChange={handleChange}
             placeholder="Article"
-            className="w-full border p-3 h-48 rounded bg-white text-black"
+            className="w-full border p-3 h-48 rounded bg-white text-black outline-0"
           />
 
           <input
             type="file"
             name="attachedFile"
             onChange={handleChange}
-            className="w-full border p-3 rounded bg-white text-black"
+            className="w-full border p-3 rounded bg-white text-black outline-0"
           />
 
           <div className="text-center pt-4">
