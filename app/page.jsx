@@ -7,13 +7,15 @@ import { GoArrowLeft } from "react-icons/go";
 import { GoArrowRight } from "react-icons/go";
 import Projects from "./projects/page";
 import React, { useRef } from "react";
+import Link from "next/link";
 
 const scrollableImage = [
-  "https://tridentrealty.co.in/uploads/banner/17087007654384.webp",
-  "https://tridentrealty.co.in/uploads/banner/17087008185632.webp",
-  "https://tridentrealty.co.in/uploads/banner/17087006552469.webp",
-  "https://tridentrealty.co.in/uploads/banner/17087006907349.webp",
+  "/assets/swip1.webp",
+  "/assets/swip2.webp",
+  "/assets/swip3.webp",
+  "/assets/swip4.webp",
 ];
+
 
 const Page = () => {
   const prevRef = useRef(null);
@@ -62,13 +64,14 @@ const Page = () => {
                   setting industry benchmarks for quality, robust engineering,
                   and in-house research.
                 </p>
-                <a
-                  href="#"
+                <Link
+                  href="who-we-are"
                   className="inline-flex items-center px-5 py-2 border border-gray-400 rounded-md hover:bg-green-600 transition"
                 >
                   Read More
                   <span className="ml-2">&gt;</span>
-                </a>
+                  </Link>
+          
               </div>
             </div>
           </div>

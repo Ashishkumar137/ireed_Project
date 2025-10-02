@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
-import { FaPlus, FaMinus } from "react-icons/fa";
 import Banner from "../components/Banner";
 import SectionHeader from "../components/SectionHeader";
 

@@ -4,7 +4,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import Projects from "../projects/page";
 import Banner from "../components/Banner";
-
+import SectionHeader from "../components/SectionHeader";
 
 export default function ProjectsPage() {
 
@@ -15,7 +15,9 @@ export default function ProjectsPage() {
         alt="who_we_are"
         heading="Our Projects"
         paragraph="Creating exceptional living spaces for the new India with innovation, robust engineering, and an unparalleled scale of delivery."
+
       />
+      <SectionHeader title="PROJECTS"/>
       <Projects/>
       
     </div>
