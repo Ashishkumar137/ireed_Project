@@ -70,7 +70,8 @@ const CustomerZone = () => {
         heading="Customer zone"
         paragraph="All your queries are just a login away."
       />
-      <div className="text-center text-3xl text-gray-500 uppercase mt-8 flex justify-center gap-10">
+       <div className="mx-auto w-full px-6 max-w-7xl flex justify-center">
+      <div className="text-center text-3xl text-gray-500 uppercase mt-8 flex justify-between gap-5">
         <h2 className="p-2 cursor-pointer border-b-3 inline border-transparent hover:border-blue-950 transition duration-500">
           Customer Login
         </h2>
@@ -80,6 +81,7 @@ const CustomerZone = () => {
         <h2 className="p-2 cursor-pointer border-b-3 inline border-transparent hover:border-blue-950 transition duration-500">
           Testimonial
         </h2>
+      </div>
       </div>
       <div
         className="py-10 mt-10 bg-repeat flex flex-col md:flex-row justify-center gap-8"
