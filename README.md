@@ -3,14 +3,14 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 ## Getting Started
 See the live Demo : [https://ireed-project.vercel.app/](https://ireed-project.vercel.app/)
 
-# 🏡 Real Estate Projects Website
+#  Real Estate Projects Website
 
 A responsive **real estate showcase platform** built with **Next.js, Tailwind CSS, and Swiper.js**.  
 Users can filter projects by **property type, location, and status**, and explore them in a smooth **carousel slider** with detailed banners.
 
 ---
 
-## 📌 Table of Contents
+##  Table of Contents
 1. [Features](#-features)  
 2. [Tech Stack](#-tech-stack)  
 3. [Installation & Setup](#-installation--setup)  
@@ -18,17 +18,17 @@ Users can filter projects by **property type, location, and status**, and explor
 
 ---
 
-## 🚀 Features
-- 🔍 Filter projects by **Type, Location, and Status**  
-- 🖼️ Image slider for projects using **Swiper.js**  
-- 📱 Fully responsive design with **Tailwind CSS**  
-- 📄 Project listing and **details page support**  
-- 🎨 Clean and modern UI with reusable components  
-- ⚡ Built with **Next.js 15** (Turbopack) for fast development  
+##  Features
+-  Filter projects by **Type, Location, and Status**  
+-  Image slider for projects using **Swiper.js**  
+-  Fully responsive design with **Tailwind CSS**  
+-  Project listing and **details page support**  
+-  Clean and modern UI with reusable components  
+-  Built with **Next.js 15** (Turbopack) for fast development  
 
 ---
 
-## ⚡ Tech Stack
+##  Tech Stack
 - **[Next.js 15](https://nextjs.org/)** – React framework  
 - **[Tailwind CSS](https://tailwindcss.com/)** – Styling  
 - **[Swiper.js](https://swiperjs.com/)** – Carousel slider  
@@ -50,16 +50,13 @@ Users can filter projects by **property type, location, and status**, and explor
 ## 📸 Screenshots
 
 ### Homepage
-![Homepage](<img width="1912" height="960" alt="image" src="https://github.com/user-attachments/assets/e30c3e9b-c054-4210-8882-1d1904078445" />
-)
+<img width="1912" height="960" alt="image" src="https://github.com/user-attachments/assets/e30c3e9b-c054-4210-8882-1d1904078445" />
 
 ### Projects Page
-![Projects](<img width="563" height="712" alt="image" src="https://github.com/user-attachments/assets/4fa44d73-56d3-4f42-beb2-fac3ef0153dd" />
-)
+<img width="563" height="712" alt="image" src="https://github.com/user-attachments/assets/4fa44d73-56d3-4f42-beb2-fac3ef0153dd" />
 
 ### Costomer Section
-![Customer](<img width="492" height="647" alt="image" src="https://github.com/user-attachments/assets/1a581f9c-a47a-49b3-998f-00f78c7a54d1" />
-)
+<img width="492" height="647" alt="image" src="https://github.com/user-attachments/assets/1a581f9c-a47a-49b3-998f-00f78c7a54d1" />
 
 
 
